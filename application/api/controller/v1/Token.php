@@ -16,6 +16,7 @@ use app\api\validate\TokenGet;
 use app\lib\exception\ParameterException;
 use app\lib\exception\TokenException;
 use app\api\service\Token as TokenService;
+use think\Controller;
 
 class Token
 {
@@ -38,8 +39,7 @@ class Token
     }
 
 
-
-    public function varifyToken($token=''){
+    public function verifyToken($token=''){
         if(!$token) {
             throw new ParameterException([
                 'token不允许为空'
